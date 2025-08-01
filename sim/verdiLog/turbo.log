@@ -1,0 +1,3 @@
+Command Line: /opt/Synopsys/verdi/V-2023.12-SP2/platform/LINUXAMD64/bin/Novas -elab ./build/simv.daidir/kdb
+uname(Linux localhost.localdomain 4.18.0-553.22.1.el8_10.x86_64 #1 SMP Wed Sep 11 18:02:00 EDT 2024 x86_64)
+au time 25.163552 2.987892 1.038645 delta 278630400 278630400 total 934445056 934445056

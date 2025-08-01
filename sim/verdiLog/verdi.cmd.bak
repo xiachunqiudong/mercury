@@ -1,0 +1,20 @@
+verdiSetActWin -dock widgetDock_<Message>
+debImport "-elab" "./build/simv.daidir/kdb"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiQtPrefEnv -show
+verdiQtPrefEnv -find "f"
+verdiQtPrefEnv -find "fo"
+verdiQtPrefEnv -find "fon"
+verdiQtPrefEnv -find "font"
+verdiSetFont -font "DejaVu Sans" -size "16"
+verdiSetFont -monoQFont "DejaVu Sans Mono" -monoQFontSize "16"
+srcSetPreference -cfiletype \
+           {Source files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e;*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh; *.tcl; *.tk; *.do; *.upf; *.cpf);;HDL files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e);;C/C++ files (*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh);;Tcl files (*.tcl; *.tk; *.do);;Power files (*.upf;*.cpf) }
+srcSetPreference -profileTime off
+simSetInteractiveFsdbFile inter.fsdb
+simSetNoAppendOption on
+simSetSvtbMode on
+verdiQtPrefEnv -apply
+verdiSetFont -monoQFont "DejaVu Sans Mono" -monoQFontSize "16"
+verdiQtPrefEnv -ok
+verdiWindowResize -win $_Verdi_1 "1283" "276" "892" "566"

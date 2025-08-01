@@ -1,0 +1,65 @@
+@verdi rc file Version 1.0
+[General]
+saveDB = TRUE
+relativePath = FALSE
+saveSingleView = FALSE
+saveNWaveWinId = 
+VerdiVersion = Verdi_V-2023.12-SP2
+[KeyNote]
+Line1 = Automatic Backup 0
+Line2 = Save Open Database Information: Yes
+Line3 = Path Option: Absolute Paths
+Line4 = Windows Option: All Windows
+[OneSearch]
+isExisted = TRUE
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+Console = FALSE
+powerDumped = 0
+[fusa]
+fdb_server = 
+fdb_proj = 
+fdb_campaign = 
+fdb_tool = 
+[hb]
+viewport = 0 26 2560 1536 0 0 189 2558
+activeNode = "sim_tb.mercury.exu.laneA_decoder"
+activeScope = "sim_tb.mercury.exu.laneA_decoder"
+activeFile = "/home/host/project/mercury/sim/../rtl/exu/exu_decoder.sv"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 0
+baMode = False
+srcLineNum = True
+AutoWrap = True
+IdentifyFalseLogic = False
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+powerAwareAnnot = True
+safetyAwareAnnot = True
+amsAnnot = True
+DnDtraceCrossHierOnly = True
+leadingZero = False
+signalPane = False
+SourceVerticalScrollLines = 5
+Scope1 = "sim_tb.mercury.exu.laneA_decoder"
+Scope2 = "sim_tb.mercury.exu"
+Scope3 = "sim_tb.mercury.ifu"
+Scope4 = "sim_tb.mercury"
+Scope5 = "sim_tb"
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.design]
+importCmd = "-elab" "./build/simv.daidir/kdb" 
+invokeDir = /home/host/project/mercury/sim
+[hb.sourceTab.1]
+scope = sim_tb.mercury.exu.laneA_decoder
+File = /home/host/project/mercury/rtl/exu/exu_decoder.sv
+Line = 1

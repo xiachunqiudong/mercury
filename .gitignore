@@ -1,1 +1,4 @@
 /sim/build
+/sim/verdiLog
+/sim/*.log
+/sim/*.conf

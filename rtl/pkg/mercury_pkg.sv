@@ -26,7 +26,10 @@ package mercury_pkg;
   } opcode_t;
 
   typedef enum {
-    ADD, AND, OR, XOR, SLL, SRL, SRA
+    ADD, SUB,
+    AND, OR, XOR,
+    SLT, SLTU,
+    SLL, SRL, SRA
   } alu_op_t;
 
   typedef struct packed {

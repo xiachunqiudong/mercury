@@ -1,4 +1,5 @@
-/sim/build
-/sim/verdiLog
-/sim/*.log
-/sim/*.conf
+sim/
+
+!sim/src
+!sim/Makefile
+!sim/case/env

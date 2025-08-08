@@ -1,14 +1,27 @@
-module rom(
-  input  logic [31:7]  raddr,
-  output logic [127:0] rdata
+//--------------------------------------
+// ROM SIZE   : 4M
+// DATA WIDTH : 128 bit
+//--------------------------------------
+module rom #(
+  parameter DATA_WIDTH = 128,
+  parameter ADDR_WIDTH = 25
+) (
+  input  logic [ADDR_WIDTH-1:0] raddr,
+  output logic [DATA_WIDTH-1:0] rdata
 );
 
-  logic [127:0] mem [1024:0];
+  parameter DATA_ADDR_WIDTH  = $clog2(DATA_WIDTH);
+  parameter ARRAY_ADDR_WIDTH = ADDR_WIDTH - DATA_ADDR_WIDTH;
+  parameter ARRAY_SIZE       = 1 << ARRAY_ADDR_WIDTH;
 
-  assign rdata = mem[raddr[16:7]];
+  logic [DATA_WIDTH-1:0] mem [ARRAY_SIZE-1:0];
+
+  assign rdata[DATA_WIDTH-1:0] = mem[raddr[ADDR_WIDTH-1:DATA_ADDR_WIDTH]];
+
+  string rom_init_filename = "/home/host/project/mercury/sim/case/demo/demo.text.hex";
 
   initial begin
-    
+    $readmemh(rom_init_filename, mem);
   end
 
 endmodule

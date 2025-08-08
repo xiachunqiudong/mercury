@@ -18,8 +18,8 @@ module mercury_top(
 
   ifu_top
   ifu (
-    .clk              (),
-    .rst              (),
+    .clk              (clk),
+    .rst              (rst),
     .ifu_instA_valid  (ifu_instA_valid),
     .ifu_instA_allowIn(ifu_instA_allowIn),
     .ifu_instA_data   (ifu_instA_data[31:0]),

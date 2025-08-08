@@ -16,4 +16,14 @@ module ifu_top(
 );
 
 
+ifu_fetch
+fetcher(
+  .clk(clk),
+  .rst(rst),
+  .fetch_instA(ifu_instA_data),
+  .fetch_instB(),
+  .fetch_instC(),
+  .fetch_instD()
+);
+
 endmodule

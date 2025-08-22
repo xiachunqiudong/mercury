@@ -18,7 +18,7 @@ module rom #(
 
   assign rdata[DATA_WIDTH-1:0] = mem[raddr[ADDR_WIDTH-1:DATA_ADDR_WIDTH]];
 
-  string rom_init_filename = "/home/host/project/mercury/sim/case/demo/demo.text.hex";
+  string rom_init_filename = "/home/host/project/mercury/sim/case/demo/demo.hex";
 
   initial begin
     $readmemh(rom_init_filename, mem);

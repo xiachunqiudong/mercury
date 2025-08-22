@@ -36,9 +36,7 @@ clang:
 	-o $(CASE_PATH)/$(CASE_NAME).elf
 
 genhex:
-	llvm-objcopy -O binary --only-section=.text $(CASE_PATH)/$(CASE_NAME).elf $(CASE_PATH)/$(CASE_NAME).text.bin
-	xxd -p -c 32 $(CASE_PATH)/$(CASE_NAME).text.bin > $(CASE_PATH)/$(CASE_NAME).text.hex
-	rm $(CASE_PATH)/$(CASE_NAME).text.bin
+	python3 src/tools/elf_parser.py $(CASE_PATH)/$(CASE_NAME).elf > $(CASE_PATH)/$(CASE_NAME).hex
 
 
 .PHONY: build

@@ -5,7 +5,7 @@
 // Read  ports: 4
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-module ifu_inst_queue(
+module ifu_fetch_queue(
   input  logic        clk,
   input  logic        rst,
   input  logic [7:0]  input_inst_valid_num_dcd,
@@ -77,13 +77,13 @@ module ifu_inst_queue(
   logic [31:0] bank6_inst_Q;
   logic [31:0] bank7_inst_Q;
 
-  assign bank_write_ptr_In[7:0] = input_valid_inst_num_dcd[0] & {bank_write_ptr_Q[6:0], bank_write_ptr_Q[7]}   // 1 valid inst num
-                                | input_valid_inst_num_dcd[1] & {bank_write_ptr_Q[5:0], bank_write_ptr_Q[7:6]} // 2 valid inst num
-                                | input_valid_inst_num_dcd[2] & {bank_write_ptr_Q[4:0], bank_write_ptr_Q[7:5]} // 3 valid inst num
-                                | input_valid_inst_num_dcd[3] & {bank_write_ptr_Q[3:0], bank_write_ptr_Q[7:4]} // 4 valid inst num
-                                | input_valid_inst_num_dcd[4] & {bank_write_ptr_Q[2:0], bank_write_ptr_Q[7:3]} // 5 valid inst num
-                                | input_valid_inst_num_dcd[5] & {bank_write_ptr_Q[1:0], bank_write_ptr_Q[7:2]} // 6 valid inst num
-                                | input_valid_inst_num_dcd[6] & {bank_write_ptr_Q[0]  , bank_write_ptr_Q[7:1]};// 7 valid inst num
+  assign bank_write_ptr_In[7:0] = input_inst_valid_num_dcd[0] & {bank_write_ptr_Q[6:0], bank_write_ptr_Q[7]}   // 1 valid inst num
+                                | input_inst_valid_num_dcd[1] & {bank_write_ptr_Q[5:0], bank_write_ptr_Q[7:6]} // 2 valid inst num
+                                | input_inst_valid_num_dcd[2] & {bank_write_ptr_Q[4:0], bank_write_ptr_Q[7:5]} // 3 valid inst num
+                                | input_inst_valid_num_dcd[3] & {bank_write_ptr_Q[3:0], bank_write_ptr_Q[7:4]} // 4 valid inst num
+                                | input_inst_valid_num_dcd[4] & {bank_write_ptr_Q[2:0], bank_write_ptr_Q[7:3]} // 5 valid inst num
+                                | input_inst_valid_num_dcd[5] & {bank_write_ptr_Q[1:0], bank_write_ptr_Q[7:2]} // 6 valid inst num
+                                | input_inst_valid_num_dcd[6] & {bank_write_ptr_Q[0]  , bank_write_ptr_Q[7:1]};// 7 valid inst num
 
   always_ff @(posedge clk or posedge rst) begin
     if (rst) begin

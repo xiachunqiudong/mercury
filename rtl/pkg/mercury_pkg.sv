@@ -34,6 +34,10 @@ package mercury_pkg;
   } alu_op_t;
 
   typedef struct packed {
+    logic [31:0] inst;
+  } fetch_entry_t;
+
+  typedef struct packed {
     logic [4:0] lsrc1;
     logic [4:0] lsrc2;
     logic [4:0] ldst;
